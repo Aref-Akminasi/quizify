@@ -4,11 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Quizify</title>
   </head>
   <body>
-    <div class="text-4xl" id="increase">counter</div>
-    <div class="text-xl" id="count">0</div>
+    <!-- Nav -->
+    <nav class="container mx-auto p-4 flex justify-between items-center">
+      <h1 class="font-fredoka text-5xl font-bold text-navyBlue">Quizify</h1>
+      <!-- Dark mode wraper -->
+      <button class="cursor-pointer">
+        <img src="./images/moon.svg" alt="moon" class="w-8" />
+      </button>
+    </nav>
+
+    <!-- Question -->
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

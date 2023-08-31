@@ -16,6 +16,9 @@ module.exports = {
         navyBlue: '#2E425A',
         bgColor: '#f5f5f5',
       },
+      fontFamily: {
+        fredoka: ['Fredoka', 'sans-serif'],
+      },
     },
   },
   variants: {
