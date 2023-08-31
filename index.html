@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -12,13 +12,27 @@
     />
     <title>Quizify</title>
   </head>
-  <body>
+  <body class="dark:bg-darkBlue">
     <!-- Nav -->
     <nav class="container mx-auto p-4 flex justify-between items-center">
-      <h1 class="font-fredoka text-5xl font-bold text-navyBlue">Quizify</h1>
+      <h1 class="font-fredoka text-5xl font-bold text-navyBlue dark:text-white">
+        Quizify
+      </h1>
       <!-- Dark mode wraper -->
-      <button class="cursor-pointer">
-        <img src="./images/moon.svg" alt="moon" class="w-8" />
+      <button
+        class="cursor-pointer border border-navyBlue dark:border-white p-2 rounded-md shadow-md"
+        id="darkmode"
+      >
+        <img
+          src="./images/moon.svg"
+          alt="moon"
+          class="w-8 inline-block dark:hidden"
+        />
+        <img
+          src="./images/sun.svg"
+          alt="moon"
+          class="w-8 hidden dark:inline-block"
+        />
       </button>
     </nav>
 

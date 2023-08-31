@@ -1,5 +1,5 @@
-import './style.css';
 import './tailwind.css';
+import './darkmode.ts';
 import axios from 'axios';
 
 function getQuiz() {
