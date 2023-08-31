@@ -12,10 +12,12 @@
     />
     <title>Quizify</title>
   </head>
-  <body class="dark:bg-darkBlue">
+  <body class="bg-bgColor dark:bg-darkBlue">
     <!-- Nav -->
     <nav class="container mx-auto p-4 flex justify-between items-center">
-      <h1 class="font-fredoka text-5xl font-bold text-navyBlue dark:text-white">
+      <h1
+        class="font-fredoka text-3xl md:text-5xl font-bold text-navyBlue dark:text-white"
+      >
         Quizify
       </h1>
       <!-- Dark mode wraper -->
@@ -36,7 +38,74 @@
       </button>
     </nav>
 
-    <!-- Question -->
+    <!-- All container -->
+    <div>
+      <!-- Question -->
+      <section class="container mx-auto mt-24 p-4">
+        <h2
+          class="text-center mx-auto max-w-3xl text-3xl md:text-4xl font-fredoka font-medium text-navyBlue dark:text-white"
+        >
+          Which element is represented by the symbol 'Na' in the periodic table?
+        </h2>
+      </section>
+
+      <!-- Answers -->
+      <section class="container mx-auto max-w-5xl mt-12 px-12">
+        <!-- Progress -->
+        <div class="flex justify-center md:justify-start">
+          <span
+            class="font-fredoka text-2xl text-navyBlue dark:text-white inline-block"
+            >1/24</span
+          >
+        </div>
+
+        <!-- Options -->
+        <!-- Options 1 & 2 container -->
+        <div
+          class="flex flex-col space-y-4 space-x-0 md:space-x-4 md:space-y-0 md:flex-row mt-4 cursor-pointer"
+        >
+          <div
+            class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1 flex justify-between"
+          >
+            <span
+              class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka"
+              >A) Germany</span
+            >
+
+            <img src="images/correct.svg" alt="" class="w-4 hidden" />
+            <img src="images/mistake.svg" alt="" class="w-3 hidden" />
+          </div>
+          <div class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1">
+            <span
+              class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka"
+              >A) Germany</span
+            >
+          </div>
+        </div>
+        <!-- Options 3 & 4 container -->
+        <div
+          class="flex flex-col space-y-4 space-x-0 md:space-x-4 md:space-y-0 md:flex-row mt-4 cursor-pointer"
+        >
+          <div
+            class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1 flex justify-between"
+          >
+            <span
+              class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka"
+              >A) Germany</span
+            >
+
+            <img src="images/correct.svg" alt="" class="w-4 hidden" />
+            <img src="images/mistake.svg" alt="" class="w-3 hidden" />
+          </div>
+          <div class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1">
+            <span
+              class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka"
+              >A) Germany</span
+            >
+          </div>
+        </div>
+      </section>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
