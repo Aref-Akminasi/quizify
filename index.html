@@ -39,7 +39,7 @@
     </nav>
 
     <!-- All container -->
-    <div>
+    <div class="hidden">
       <!-- Question -->
       <section class="container mx-auto mt-24 p-4">
         <h2
@@ -106,6 +106,59 @@
         </div>
       </section>
     </div>
+
+    <!-- Score container -->
+    <section class="container mx-auto mt-24 px-4">
+      <div
+        class="max-w-lg bg-white dark:bg-navyBlue mx-auto flex flex-col items-center space-y-4 p-8 rounded-lg"
+      >
+        <h2
+          class="text-3xl md:text-4xl font-medium font-fredoka text-navyBlue dark:text-white"
+        >
+          Your Score!
+        </h2>
+
+        <!-- Circle -->
+        <!-- Building a Progress Ring: https://css-tricks.com/building-progress-ring-quickly/ -->
+        <div class="relative">
+          <svg class="h-64 w-64">
+            <circle
+              class="text-wrong"
+              stroke-width="14"
+              stroke="currentColor"
+              fill="transparent"
+              r="96"
+              cx="50%"
+              cy="50%"
+            />
+            <circle
+              id="progress"
+              class="text-correct"
+              stroke-width="14"
+              fill="transparent"
+              stroke="currentColor"
+              r="96"
+              cx="50%"
+              cy="50%"
+            />
+          </svg>
+          <h3
+            class="font-fredoka text-3xl font-medium absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-navyBlue dark:text-white"
+          >
+            18/24
+          </h3>
+        </div>
+        <span
+          class="text-navyBlue dark:text-white font-fredoka font-medium text-2xl"
+          >75%</span
+        >
+        <button
+          class="bg-navyBlue dark:bg-white font-fredoka font-medium py-2 px-4 text-xl rounded-md text-white dark:text-navyBlue"
+        >
+          Try Again
+        </button>
+      </div>
+    </section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
