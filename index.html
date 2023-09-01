@@ -39,11 +39,12 @@
     </nav>
 
     <!-- All container -->
-    <div class="hidden">
+    <div>
       <!-- Question -->
       <section class="container mx-auto mt-24 p-4">
         <h2
           class="text-center mx-auto max-w-3xl text-3xl md:text-4xl font-fredoka font-medium text-navyBlue dark:text-white"
+          id="question"
         >
           Which element is represented by the symbol 'Na' in the periodic table?
         </h2>
@@ -54,8 +55,8 @@
         <!-- Progress -->
         <div class="flex justify-center md:justify-start">
           <span
-            class="font-fredoka text-2xl text-navyBlue dark:text-white inline-block"
-            >1/24</span
+            class="font-fredoka text-2xl text-navyBlue dark:text-white inline-block progress"
+            >0 / 0</span
           >
         </div>
 
@@ -65,20 +66,30 @@
           class="flex flex-col space-y-4 space-x-0 md:space-x-4 md:space-y-0 md:flex-row mt-4 cursor-pointer"
         >
           <div
-            class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1 flex justify-between"
+            class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1 flex justify-between opr"
           >
             <span
               class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka"
-              >A) Germany</span
+              >A
+              <span
+                class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka op"
+                >Germay</span
+              ></span
             >
 
             <img src="images/correct.svg" alt="" class="w-4 hidden" />
             <img src="images/mistake.svg" alt="" class="w-3 hidden" />
           </div>
-          <div class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1">
+          <div
+            class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1 opr"
+          >
             <span
               class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka"
-              >A) Germany</span
+              >B
+              <span
+                class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka op"
+                >Germay</span
+              ></span
             >
           </div>
         </div>
@@ -87,20 +98,30 @@
           class="flex flex-col space-y-4 space-x-0 md:space-x-4 md:space-y-0 md:flex-row mt-4 cursor-pointer"
         >
           <div
-            class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1 flex justify-between"
+            class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1 flex justify-between opr"
           >
             <span
               class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka"
-              >A) Germany</span
+              >C
+              <span
+                class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka op"
+                >Germay</span
+              ></span
             >
 
             <img src="images/correct.svg" alt="" class="w-4 hidden" />
             <img src="images/mistake.svg" alt="" class="w-3 hidden" />
           </div>
-          <div class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1">
+          <div
+            class="py-8 px-4 bg-white dark:bg-navyBlue rounded-lg flex-1 opr"
+          >
             <span
               class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka"
-              >A) Germany</span
+              >D
+              <span
+                class="text-xl md:text-2xl text-navyBlue dark:text-white font-fredoka op"
+                >Germay</span
+              ></span
             >
           </div>
         </div>
@@ -108,7 +129,7 @@
     </div>
 
     <!-- Score container -->
-    <section class="container mx-auto mt-24 px-4">
+    <section class="container mx-auto mt-24 px-4 hidden">
       <div
         class="max-w-lg bg-white dark:bg-navyBlue mx-auto flex flex-col items-center space-y-4 p-8 rounded-lg"
       >
