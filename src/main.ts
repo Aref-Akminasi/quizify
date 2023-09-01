@@ -27,6 +27,8 @@ function getQuiz() {
 getQuiz();
 
 function askQuestion() {
+  reset();
+  progress.innerHTML = `${currentQuestion + 1} / ${totalQuestions}`;
   questionElement.innerText = questions[currentQuestion].q;
   options[0].innerHTML = questions[currentQuestion].a;
   options[1].innerHTML = questions[currentQuestion].b;
@@ -45,12 +47,29 @@ function checkAnswer(r: any): void {
   const clickedRec = r.firstElementChild.innerText[0].toLowerCase();
   if (correctAnswer === clickedRec) {
     answeredCorrect++;
+    r.children[1].classList.remove('hidden');
+  } else {
+    r.children[2].classList.remove('hidden');
+    const answersArr = ['a', 'b', 'c', 'd'];
+    optionsRec[answersArr.indexOf(correctAnswer)].children[1].classList.remove(
+      'hidden'
+    );
   }
   if (currentQuestion != totalQuestions - 1) {
-    currentQuestion++;
-    askQuestion();
+    setTimeout(() => {
+      currentQuestion++;
+      askQuestion();
+    }, 1000);
   } else {
-    alert(`Game over, your score is: ${answeredCorrect}/${totalQuestions}`);
+    console.log(
+      `Game over, your score is: ${answeredCorrect}/${totalQuestions}`
+    );
   }
-  progress.innerHTML = `${currentQuestion + 1} / ${totalQuestions}`;
+}
+
+function reset() {
+  optionsRec.forEach((r) => {
+    r.children[1].classList.add('hidden');
+    r.children[2].classList.add('hidden');
+  });
 }
