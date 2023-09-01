@@ -39,7 +39,7 @@
     </nav>
 
     <!-- All container -->
-    <div>
+    <div id="quiz">
       <!-- Question -->
       <section class="container mx-auto mt-24 p-4">
         <h2
@@ -133,7 +133,7 @@
     </div>
 
     <!-- Score container -->
-    <section class="container mx-auto mt-24 px-4 hidden">
+    <section class="container mx-auto mt-24 px-4 hidden" id="score">
       <div
         class="max-w-lg bg-white dark:bg-navyBlue mx-auto flex flex-col items-center space-y-4 p-8 rounded-lg"
       >
@@ -168,16 +168,16 @@
             />
           </svg>
           <h3
+            id="quiz-score"
             class="font-fredoka text-3xl font-medium absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-navyBlue dark:text-white"
-          >
-            18/24
-          </h3>
+          ></h3>
         </div>
         <span
+          id="score-precentage"
           class="text-navyBlue dark:text-white font-fredoka font-medium text-2xl"
-          >75%</span
-        >
+        ></span>
         <button
+          id="try-again"
           class="bg-navyBlue dark:bg-white font-fredoka font-medium py-2 px-4 text-xl rounded-md text-white dark:text-navyBlue"
         >
           Try Again

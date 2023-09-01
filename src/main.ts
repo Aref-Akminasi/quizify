@@ -5,6 +5,12 @@ const questionElement = document.getElementById('question')!;
 const options = document.querySelectorAll('.op')!;
 const optionsRec = document.querySelectorAll('.opr')!;
 const progress = document.querySelector('.progress')!;
+const quiz = document.getElementById('quiz')!;
+const score = document.getElementById('score')!;
+const quizScore = document.getElementById('quiz-score')!;
+const scorePrecentage = document.getElementById('score-precentage')!;
+const tryAgain = document.getElementById('try-again')!;
+const progressBar = document.getElementById('progress')!;
 let questions: any[] = [];
 let currentQuestion = 0;
 let answeredCorrect = 0;
@@ -59,11 +65,9 @@ function checkAnswer(r: any): void {
     setTimeout(() => {
       currentQuestion++;
       askQuestion();
-    }, 1000);
+    }, 800);
   } else {
-    console.log(
-      `Game over, your score is: ${answeredCorrect}/${totalQuestions}`
-    );
+    gameOver();
   }
 }
 
@@ -73,3 +77,18 @@ function reset() {
     r.children[2].classList.add('hidden');
   });
 }
+
+function gameOver() {
+  quiz?.classList.add('hidden');
+  score?.classList.remove('hidden');
+  quizScore.innerHTML = `${answeredCorrect}/${totalQuestions}`;
+  const precentage = Math.floor((answeredCorrect / totalQuestions) * 100);
+  scorePrecentage.innerHTML = `${precentage}%`;
+  progressBar.style.strokeDashoffset = `${
+    602.88 - (602.88 * precentage) / 100
+  }`;
+}
+
+tryAgain.addEventListener('click', () => {
+  location.reload();
+});
