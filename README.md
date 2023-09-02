@@ -38,7 +38,7 @@ Users should be able to:
 ### Built with
 
 - HTML5
-- Tailwind
+- Tailwind CSS
 - Axios
 - TypeScript
 - Vite
