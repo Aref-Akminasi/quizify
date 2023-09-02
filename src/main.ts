@@ -11,12 +11,16 @@ const quizScore = document.getElementById('quiz-score')!;
 const scorePrecentage = document.getElementById('score-precentage')!;
 const tryAgain = document.getElementById('try-again')!;
 const progressBar = document.getElementById('progress')!;
+const questionInterval = 1500;
+const date = new Date();
+
+let preTime = date.getTime();
 let questions: any[] = [];
 let currentQuestion = 0;
 let answeredCorrect = 0;
 let totalQuestions: number;
 
-function getQuiz() {
+function getQuiz(): void {
   axios
     .get(
       'https://raw.githubusercontent.com/Aref-Akminasi/quizify-json/main/quiz.json'
@@ -32,7 +36,7 @@ function getQuiz() {
 
 getQuiz();
 
-function askQuestion() {
+function askQuestion(): void {
   reset();
   progress.innerHTML = `${currentQuestion + 1} / ${totalQuestions}`;
   questionElement.innerText = questions[currentQuestion].q;
@@ -49,38 +53,43 @@ optionsRec.forEach((r) =>
 );
 
 function checkAnswer(r: any): void {
-  const correctAnswer = questions[currentQuestion].correct;
-  const clickedRec = r.firstElementChild.innerText[0].toLowerCase();
-  if (correctAnswer === clickedRec) {
-    answeredCorrect++;
-    r.children[1].classList.remove('hidden');
-  } else {
-    r.children[2].classList.remove('hidden');
-    const answersArr = ['a', 'b', 'c', 'd'];
-    optionsRec[answersArr.indexOf(correctAnswer)].children[1].classList.remove(
-      'hidden'
-    );
-  }
-  if (currentQuestion != totalQuestions - 1) {
-    setTimeout(() => {
-      currentQuestion++;
-      askQuestion();
-    }, 800);
-  } else {
-    gameOver();
+  const date = new Date();
+  const currentTime = date.getTime();
+  if (currentTime - preTime > questionInterval) {
+    preTime = currentTime;
+    const correctAnswer = questions[currentQuestion].correct;
+    const clickedRec = r.firstElementChild.innerText[0].toLowerCase();
+    if (correctAnswer === clickedRec) {
+      answeredCorrect++;
+      r.children[1].classList.remove('hidden');
+    } else {
+      r.children[2].classList.remove('hidden');
+      const answersArr = ['a', 'b', 'c', 'd'];
+      optionsRec[
+        answersArr.indexOf(correctAnswer)
+      ].children[1].classList.remove('hidden');
+    }
+    if (currentQuestion != totalQuestions - 1) {
+      setTimeout(() => {
+        currentQuestion++;
+        askQuestion();
+      }, questionInterval);
+    } else {
+      setTimeout(gameOver, questionInterval);
+    }
   }
 }
 
-function reset() {
+function reset(): void {
   optionsRec.forEach((r) => {
     r.children[1].classList.add('hidden');
     r.children[2].classList.add('hidden');
   });
 }
 
-function gameOver() {
-  quiz?.classList.add('hidden');
-  score?.classList.remove('hidden');
+function gameOver(): void {
+  quiz.classList.add('hidden');
+  score.classList.remove('hidden');
   quizScore.innerHTML = `${answeredCorrect}/${totalQuestions}`;
   const precentage = Math.floor((answeredCorrect / totalQuestions) * 100);
   scorePrecentage.innerHTML = `${precentage}%`;
