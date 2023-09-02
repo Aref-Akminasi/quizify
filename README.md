@@ -1,6 +1,6 @@
 # Quizify
 
-This is a self-designed and self-built project. the goal was to create a quiz template that is suitable for any kind of quizzes with multiple choice questions.
+This is a self-designed and self-built project. The goal was to create a quiz template suitable for any kind of quiz featuring multiple-choice questions.
 
 ## Table of contents
 
