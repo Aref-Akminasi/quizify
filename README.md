@@ -1,2 +1,0 @@
-# quizify
- My project
